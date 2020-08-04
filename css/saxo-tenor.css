@@ -1,0 +1,220 @@
+/*saxo-tenor.css*/
+:root {
+    --gold:rgba(228, 208, 97, 0.911);
+    --red:rgb(236, 9, 9);
+    --sans:'Balsamiq Sans', cursive;
+    --fluo: #39FF14;
+    --gray:rgb(201, 194, 194)
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    margin: auto;
+    background-image:url("SaxoTenorReal.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    font-family: Arial, Helvetica, sans-serif
+}
+.cabecera.contenedor {
+    max-width: 1000px;
+    margin: auto;
+    justify-content: space-between;
+}
+.cabecera {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 10px;
+}
+
+@keyframes fondo {
+    0% {
+        color: black;
+    }
+    30%{
+        color: rgb(255, 81, 0);
+        text-shadow: 0 0 30px var(--red);
+    }
+    50% {
+        color: black;
+    }
+    80% {
+        color: rgb(255, 81, 0);
+        text-shadow: 0 0 30px var(--red);
+    }
+    100% {
+        color: black;
+    }
+}
+   
+.cabecera h1{
+    font-size: 60px;
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 50px;
+    color: black;
+    animation-name: fondo;
+    animation-duration: 5s;
+        /* Cuanto tarda en ejecutarse*/
+    animation-delay: 4s;
+        /*animation-fill-mode: forwards;*/
+        /* infinite / numeros enteros / decimales*/
+    animation-iteration-count: infinite;
+    }
+    @keyframes aparecer{
+        100%{
+            opacity: 1;
+        }
+}
+/*-----------------------------------------
+NAV
+------------------------------------------*/
+.nav {
+    width: 100%;	
+    margin: 10px auto;
+    margin-bottom: 20px;
+    position: relative;    
+}
+.nav-lista {
+    display: flex;
+    text-align: center;
+    list-style: none;    
+}
+.nav-lista-item {
+    background-color: var(--gold);
+    flex-grow: 1;
+    position: relative;
+    border: 2px solid gray;
+    box-shadow: 0 0 20px var(--red);
+    border-radius: 4px;
+    margin: 2px 2px;
+    font-family: var(--sans);
+}
+.submenu {
+    background-color: var(--red);
+    text-decoration: none;
+    list-style: none;
+    display: none;
+    transform: scale(1.1) rotate(0deg) skew(0deg);
+    width: 100%;
+    position: absolute;
+    border: 2px solid gray;
+    border-bottom: 2px solid gray;
+    box-shadow: 0 0 20px var(--red);
+    border-radius: 4px;
+}
+.nav-lista-item:hover .submenu,
+.nav-lista-item:focus-within .submenu{
+    background-color: var(--red);
+    display: flex;
+    display: block;
+}
+.nav a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+}
+.nav a:hover {
+    background-color: var(--fluo);    
+    transform: scale(1.1) rotate(0deg) skew(0deg);
+    box-shadow: 0 0 50px white;
+    border-radius: 4px;
+    color: white;
+}
+.boton {
+
+	display: none;
+
+}
+@media (max-width: 768px){
+
+.boton {
+
+    display: block;
+
+}
+.nav {
+    display:none;
+}
+.nav-lista {
+    display: block;
+}
+
+.mostrar{
+    display: block;
+}
+.submenu{
+    position: relative;
+}
+}/*cierra la media quary*/
+/*-----------------------------------------
+CONTENIDO
+------------------------------------------*/
+
+.contenido{  
+	width: 85%;
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 20px;
+    background-color: var(--gray);
+    padding: 20px;
+}
+.img {
+    margin-left: 150px;
+}
+.contenido h1{
+    align-content: center;   
+    color:rgb(13, 11, 119);
+    border-bottom: 2px solid rgb(13, 11, 119);
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+
+@media (max-width: 768px){
+    .contenido {    
+        margin: auto;
+        font-size: 12px;    
+    }
+    .img {
+        display: none;
+    }
+}
+
+
+/*------------------------------------
+PIE
+--------------------------------------*/
+.pie{
+    display: flex;
+    background-color: black;
+    width: 850px;
+    padding: 10px 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.pie-inferior {
+    color: var(--fluo);
+    margin: auto;
+    margin-left: 350px;
+    font-family: 'Lobster', cursive;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+        .pie-inferior{
+            margin-left: 0px;
+            font-size: 12px;
+        }
+} 
